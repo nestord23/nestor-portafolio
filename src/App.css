@@ -396,9 +396,65 @@
 }
 
 /* Responsive Design */
+
+/* Tablet landscape y pantallas medianas */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 30px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contact-content {
+    gap: 3rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+/* Tablet portrait */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+  
+  .hero {
+    padding: 100px 0 50px;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
   
   .about-content {
@@ -406,8 +462,13 @@
     gap: 2rem;
   }
   
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.8rem;
+  }
+  
+  .skill-item {
+    padding: 0.8rem;
   }
   
   .timeline::before {
@@ -422,6 +483,7 @@
   
   .timeline-content {
     width: 100%;
+    padding: 1.5rem;
   }
   
   .timeline-content::before {
@@ -437,11 +499,181 @@
     gap: 2rem;
   }
   
+  .contact-item {
+    padding: 0.8rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .social-link {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Móviles en landscape */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .hero .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .hero .tagline {
+    font-size: 0.95rem;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .section {
+    padding: 50px 0;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Móviles portrait pequeños */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .hero {
+    padding: 80px 0 40px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero .tagline {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .job-title {
+    font-size: 0.95rem;
+  }
+  
+  .company-name {
+    font-size: 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.6rem;
+  }
+  
+  .skill-item {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  
+  .social-links {
+    gap: 0.8rem;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .footer {
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .profile-image {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+  
+  .skill-item {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .logo img {
+    width: 30px !important;
+    height: 30px !important;
   }
 }
