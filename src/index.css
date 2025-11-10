@@ -200,12 +200,6 @@ button:active {
   .container {
     overflow-x: hidden;
   }
-  
-  /* Mejora el contraste en móviles */
-  .hero .tagline {
-    color: var(--text-dark);
-    opacity: 0.8;
-  }
 }
 
 /* Optimizaciones específicas para iPhone */

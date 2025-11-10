@@ -173,24 +173,6 @@ const Contact = () => {
                 </li>
               </ul>
             </div>
-
-            <motion.a
-              href="mailto:realdanii135@gmail.com"
-              style={{
-                display: 'inline-block',
-                background: 'var(--primary-white)',
-                color: 'var(--text-dark)',
-                padding: '15px 30px',
-                borderRadius: '12px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)'
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Enviar mensaje
-            </motion.a>
           </motion.div>
         </div>
       </div>
