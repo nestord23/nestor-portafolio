@@ -1,21 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Paleta de colores profesional */
-  --primary-blue: #87CEEB;     /* Azul cielo */
-  --primary-mint: #98FB98;     /* Verde menta */
-  --primary-white: #FFFFFF;    /* Blanco */
-  --primary-gray: #F5F5F5;     /* Gris suave */
-  --accent-beige: #F5E6D3;     /* Beige/arena */
-  --text-dark: #2C3E50;        /* Texto oscuro */
-  --text-light: #6C7B7F;       /* Texto claro */
-  --shadow: rgba(0, 0, 0, 0.1);
+  /* Paleta de colores oscuro con morado */
+  --primary-purple: #8B5CF6;      /* Morado principal */
+  --primary-purple-dark: #7C3AED;  /* Morado oscuro */
+  --primary-purple-light: #A78BFA; /* Morado claro */
+  --accent-purple: #9333EA;       /* Morado acento */
+  --bg-dark: #0F0F23;             /* Fondo oscuro principal */
+  --bg-dark-secondary: #1A1A2E;   /* Fondo oscuro secundario */
+  --bg-card: #1E1E3F;              /* Fondo de tarjetas */
+  --bg-card-hover: #252547;        /* Fondo de tarjetas hover */
+  --text-light: #E5E7EB;           /* Texto claro principal */
+  --text-light-secondary: #D1D5DB; /* Texto claro secundario */
+  --text-muted: #9CA3AF;           /* Texto atenuado */
+  --shadow: rgba(139, 92, 246, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
   
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color: var(--text-dark);
-  background-color: var(--primary-white);
+  color: var(--text-light);
+  background-color: var(--bg-dark);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,13 +36,13 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-white) 0%, var(--primary-gray) 100%);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
-  color: var(--text-dark);
+  color: var(--text-light);
 }
 
 h1 {
@@ -56,18 +61,18 @@ h3 {
 }
 
 p {
-  color: var(--text-light);
+  color: var(--text-light-secondary);
   margin-bottom: 1rem;
 }
 
 a {
-  color: var(--primary-blue);
+  color: var(--primary-purple-light);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  color: var(--text-dark);
+  color: var(--primary-purple);
   transform: translateY(-2px);
 }
 
@@ -78,8 +83,8 @@ button {
   font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-mint) 100%);
-  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+  color: var(--text-light);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px var(--shadow);
@@ -88,6 +93,7 @@ button {
 button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--shadow);
+  background: linear-gradient(135deg, var(--primary-purple-light) 0%, var(--primary-purple) 100%);
 }
 
 button:active {
@@ -105,23 +111,26 @@ button:active {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-mint));
+  background: linear-gradient(135deg, var(--primary-purple-light), var(--primary-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card {
-  background: var(--primary-white);
+  background: var(--bg-card);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 8px 32px var(--shadow);
+  box-shadow: 0 8px 32px var(--shadow-dark);
   transition: all 0.3s ease;
+  border: 1px solid rgba(139, 92, 246, 0.1);
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 16px 48px var(--shadow);
+  background: var(--bg-card-hover);
+  border-color: rgba(139, 92, 246, 0.3);
 }
 
 /* Scrollbar personalizado */
@@ -130,16 +139,16 @@ button:active {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary-gray);
+  background: var(--bg-dark-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-blue);
+  background: var(--primary-purple);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-mint);
+  background: var(--primary-purple-light);
 }
 
 /* Optimizaciones específicas para dispositivos móviles */
@@ -166,7 +175,7 @@ button:active {
   
   /* Optimiza las transiciones para dispositivos táctiles */
   * {
-    -webkit-tap-highlight-color: rgba(135, 206, 235, 0.3);
+    -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
   }
   
   /* Mejora el scroll en iOS */
@@ -273,7 +282,7 @@ button:active {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     /* Fallback para navegadores que no soporten */
-    color: var(--primary-blue);
+    color: var(--primary-purple);
   }
 }
 
