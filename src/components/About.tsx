@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import { Code, Palette, Globe, Smartphone } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Code, Palette, Globe, Smartphone } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { icon: <Code size={24} />, name: 'React' },
-    { icon: <Globe size={24} />, name: 'HTML5' },
-    { icon: <Palette size={24} />, name: 'CSS3' },
-    { icon: <Code size={24} />, name: 'JavaScript' },
-    { icon: <Globe size={24} />, name: 'WordPress' },
-    { icon: <Palette size={24} />, name: 'UX/UI' },
-    { icon: <Smartphone size={24} />, name: 'Responsive' },
-    { icon: <Code size={24} />, name: 'TypeScript' }
+    { icon: <Code size={24} />, name: "React" },
+    { icon: <Globe size={24} />, name: "HTML5" },
+    { icon: <Palette size={24} />, name: "CSS3" },
+    { icon: <Code size={24} />, name: "JavaScript" },
+    { icon: <Globe size={24} />, name: "WordPress" },
+    { icon: <Palette size={24} />, name: "UX/UI" },
+    { icon: <Smartphone size={24} />, name: "Responsive" },
+    { icon: <Code size={24} />, name: "TypeScript" },
   ];
 
   const containerVariants = {
@@ -18,9 +18,9 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -28,8 +28,8 @@ const About = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
@@ -43,7 +43,7 @@ const About = () => {
         >
           <h2 className="gradient-text">Sobre mí</h2>
         </motion.div>
-        
+
         <div className="about-content">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -52,19 +52,21 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="about-text">
-              Diseñador web con formación en Diseño Gráfico y Desarrollo Frontend, 
-              especializado en la creación de contenido digital creativo, administración 
-              de redes sociales y desarrollo de sitios en WordPress. Proactivo, con 
-              excelente ortografía y redacción.
+              Desarrollador Frontend enfocado en la creación de interfaces web
+              modernas, funcionales y atractivas. Experiencia en el desarrollo y
+              mantenimiento de sitios web con HTML, CSS, JavaScript y frameworks
+              como React. Apasionado por la experiencia de usuario, la
+              optimización del rendimiento y las buenas prácticas de código.
+              Proactivo y con gran atención al detalle.
             </p>
-            
+
             <p className="about-text">
-              Me apasiona crear interfaces intuitivas y experiencias de usuario 
-              excepcionales, combinando conocimientos técnicos con sensibilidad 
-              estética para desarrollar soluciones web innovadoras.
+              Apasionado por crear interfaces intuitivas y experiencias de
+              usuario fluidas, aplicando conocimientos técnicos y enfoque en la
+              usabilidad para desarrollar soluciones web modernas e innovadoras.
             </p>
           </motion.div>
-          
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -79,7 +81,12 @@ const About = () => {
                 className="skill-item"
                 whileHover={{ scale: 1.05 }}
               >
-                <div style={{ marginBottom: '0.5rem', color: 'var(--primary-blue)' }}>
+                <div
+                  style={{
+                    marginBottom: "0.5rem",
+                    color: "var(--primary-blue)",
+                  }}
+                >
                   {skill.icon}
                 </div>
                 <span>{skill.name}</span>

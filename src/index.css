@@ -1,22 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
   /* Paleta de colores oscuro con morado */
-  --primary-purple: #8B5CF6;      /* Morado principal */
-  --primary-purple-dark: #7C3AED;  /* Morado oscuro */
-  --primary-purple-light: #A78BFA; /* Morado claro */
-  --accent-purple: #9333EA;       /* Morado acento */
-  --bg-dark: #0F0F23;             /* Fondo oscuro principal */
-  --bg-dark-secondary: #1A1A2E;   /* Fondo oscuro secundario */
-  --bg-card: #1E1E3F;              /* Fondo de tarjetas */
-  --bg-card-hover: #252547;        /* Fondo de tarjetas hover */
-  --text-light: #E5E7EB;           /* Texto claro principal */
-  --text-light-secondary: #D1D5DB; /* Texto claro secundario */
-  --text-muted: #9CA3AF;           /* Texto atenuado */
+  --primary-purple: #6d28d9; /* Morado principal (más opaco) */
+  --primary-purple-dark: #2d0b69; /* Moroado oscuro */
+  --primary-purple-light: #865efd; /* Morado claro */
+  --accent-purple: #9333ea; /* Morado acento */
+  --bg-dark: #0f0f23; /* Fondo oscuro principal */
+  --bg-dark-secondary: #1a1a2e; /* Fondo oscuro secundario */
+  --bg-card: #1e1e3f; /* Fondo de tarjetas */
+  --bg-card-hover: #252547; /* Fondo de tarjetas hover */
+  --text-light: #e5e7eb; /* Texto claro principal */
+  --text-light-secondary: #d1d5db; /* Texto claro secundario */
+  --text-muted: #9ca3af; /* Texto atenuado */
   --shadow: rgba(139, 92, 246, 0.2);
   --shadow-dark: rgba(0, 0, 0, 0.5);
-  
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color: var(--text-light);
@@ -36,10 +37,19 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark) 0%,
+    var(--bg-dark-secondary) 100%
+  );
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.2;
   color: var(--text-light);
@@ -83,7 +93,11 @@ button {
   font-size: 1rem;
   font-weight: 500;
   font-family: inherit;
-  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple) 0%,
+    var(--primary-purple-dark) 100%
+  );
   color: var(--text-light);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -93,7 +107,11 @@ button {
 button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--shadow);
-  background: linear-gradient(135deg, var(--primary-purple-light) 0%, var(--primary-purple) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple-light) 0%,
+    var(--primary-purple) 100%
+  );
 }
 
 button:active {
@@ -111,7 +129,11 @@ button:active {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-purple-light), var(--primary-purple));
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple-light),
+    var(--primary-purple)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -131,6 +153,55 @@ button:active {
   box-shadow: 0 16px 48px var(--shadow);
   background: var(--bg-card-hover);
   border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--primary-purple-light)
+  );
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(109, 40, 217, 0.18);
+  color: var(--text-light);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  outline: none;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 18px 40px rgba(109, 40, 217, 0.24);
+}
+
+.scroll-to-top:active {
+  transform: scale(0.96);
+}
+
+.scroll-to-top:focus {
+  box-shadow: 0 0 0 6px rgba(109, 40, 217, 0.14),
+    0 10px 30px rgba(109, 40, 217, 0.12);
+}
+
+/* Slightly smaller on small screens */
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 48px;
+    height: 48px;
+    bottom: 1.4rem;
+    right: 1.4rem;
+  }
 }
 
 /* Scrollbar personalizado */
@@ -155,56 +226,62 @@ button:active {
 
 /* Mejora del área táctil para botones y enlaces */
 @media (max-width: 768px) {
-  button, a, .nav-links a {
+  button,
+  a,
+  .nav-links a {
     min-height: 44px;
     min-width: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .nav-links a {
     padding: 12px 16px;
   }
-  
+
   /* Mejora la legibilidad del texto en móviles */
   body {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
-  
+
   /* Optimiza las transiciones para dispositivos táctiles */
   * {
     -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
   }
-  
+
   /* Mejora el scroll en iOS */
   body {
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Evita el zoom accidental en inputs */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px;
   }
-  
+
   /* Mejora la visualización de imágenes en móviles */
   img {
     max-width: 100%;
     height: auto;
     display: block;
   }
-  
+
   /* Optimiza el espaciado para pantallas táctiles */
-  .social-link, .contact-item {
+  .social-link,
+  .contact-item {
     margin: 8px 0;
   }
-  
+
   /* Mejora la legibilidad en pantallas pequeñas */
-  .about-text, .job-duties li {
+  .about-text,
+  .job-duties li {
     line-height: 1.6;
   }
-  
+
   /* Evita el desbordamiento horizontal */
   .container {
     overflow-x: hidden;
@@ -217,7 +294,7 @@ button:active {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
-  
+
   .contact-item {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -230,7 +307,7 @@ button:active {
     padding-left: max(20px, env(safe-area-inset-left));
     padding-right: max(20px, env(safe-area-inset-right));
   }
-  
+
   .container {
     padding-left: max(20px, env(safe-area-inset-left));
     padding-right: max(20px, env(safe-area-inset-right));
@@ -266,7 +343,7 @@ button:active {
   :root {
     font-size: 14px;
   }
-  
+
   body {
     font-size: 1rem;
   }
@@ -276,7 +353,7 @@ button:active {
   :root {
     font-size: 13px;
   }
-  
+
   .gradient-text {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
