@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="inicio" className="hero">
       <div className="hero-background-decoration"></div>
@@ -25,12 +20,22 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2, type: "spring", stiffness: 200 }}
           >
             <div className="profile-image-glow"></div>
-            <div className="profile-image">
-              <img 
-                src="/fotoPerfil.jpg" 
-                alt="Néstor Montenegro" 
-              />
-            </div>
+            <Tilt 
+              className="profile-image-tilt"
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={1000}
+              scale={1.05}
+              transitionSpeed={1000}
+              gyroscope={true}
+            >
+              <div className="profile-image">
+                <img 
+                  src="/fotoPerfil.jpg" 
+                  alt="Néstor Montenegro" 
+                />
+              </div>
+            </Tilt>
           </motion.div>
           
           <motion.div
@@ -64,7 +69,18 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              Desarrollador Frontend
+              <Typewriter
+                options={{
+                  strings: [
+                    'Desarrollador Frontend',
+                    'React Developer', 
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                  delay: 80,
+                }}
+              />
             </motion.h2>
 
             <motion.div 
@@ -87,33 +103,6 @@ const Hero = () => {
               Especializado en crear experiencias digitales limpias, funcionales y centradas en el usuario. 
               Transformo ideas en interfaces modernas y accesibles.
             </motion.p>
-            
-            <motion.div 
-              className="hero-cta-group"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-            >
-              <motion.button 
-                className="cta-button primary"
-                onClick={() => scrollToSection('proyectos')}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span>Ver Proyectos</span>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </motion.button>
-              <motion.button 
-                className="cta-button secondary"
-                onClick={() => scrollToSection('contacto')}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Contactar
-              </motion.button>
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>

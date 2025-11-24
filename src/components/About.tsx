@@ -1,36 +1,44 @@
 import { motion } from "framer-motion";
-import { Code, Palette, Globe, Smartphone } from "lucide-react";
+import { Palette,  Terminal,  Layout, } from "lucide-react";
 
 const About = () => {
-  const skills = [
-    { icon: <Code size={24} />, name: "React", color: "#61DAFB" },
-    { icon: <Globe size={24} />, name: "HTML5", color: "#E34F26" },
-    { icon: <Palette size={24} />, name: "CSS3", color: "#1572B6" },
-    { icon: <Code size={24} />, name: "JavaScript", color: "#F7DF1E" },
-    { icon: <Globe size={24} />, name: "WordPress", color: "#21759B" },
-    { icon: <Palette size={24} />, name: "UX/UI", color: "#FF61F6" },
-    { icon: <Smartphone size={24} />, name: "Responsive", color: "#38B2AC" },
-    { icon: <Code size={24} />, name: "TypeScript", color: "#3178C6" },
+  const stats = [
+    { label: "Años de Experiencia", value: "+2" },
+    { label: "Proyectos Completados", value: "+15" },
+    { label: "Tecnologías Dominadas", value: "+10" },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+  const skillCategories = [
+    {
+      title: "Frontend",
+      icon: <Layout size={20} />,
+      skills: [
+        { name: "React", level: 90 },
+        { name: "TypeScript", level: 85 },
+        { name: "HTML5/CSS3", level: 95 },
+        { name: "Tailwind/Sass", level: 85 },
+      ]
     },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
+    {
+      title: "Backend & Tools",
+      icon: <Terminal size={20} />,
+      skills: [
+        { name: "Node.js", level: 70 },
+        { name: "Git/GitHub", level: 85 },
+        { name: "Vite/Webpack", level: 80 },
+      ]
     },
-  };
+    {
+      title: "Diseño & UX",
+      icon: <Palette size={20} />,
+      skills: [
+        { name: "Figma", level: 80 },
+        { name: "Responsive Design", level: 95 },
+        { name: "Accesibilidad", level: 85 },
+        { name: "UI Animation", level: 75 },
+      ]
+    }
+  ];
 
   return (
     <section id="sobre-mi" className="about section" style={{ position: 'relative', overflow: 'hidden' }}>
@@ -38,10 +46,10 @@ const About = () => {
       <div style={{
         position: 'absolute',
         top: '20%',
-        left: '-10%',
-        width: '300px',
-        height: '300px',
-        background: 'radial-gradient(circle, rgba(109, 40, 217, 0.15) 0%, rgba(0,0,0,0) 70%)',
+        right: '-5%',
+        width: '400px',
+        height: '400px',
+        background: 'radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(0,0,0,0) 70%)',
         borderRadius: '50%',
         zIndex: -1
       }} />
@@ -52,13 +60,17 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '3rem', textAlign: 'center' }}
+          style={{ marginBottom: '4rem', textAlign: 'center' }}
         >
           <h2 className="gradient-text" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Sobre mí</h2>
           <div style={{ width: '60px', height: '4px', background: 'var(--primary-purple)', margin: '0 auto', borderRadius: '2px' }}></div>
+          <p style={{ maxWidth: '700px', margin: '1.5rem auto 0', color: 'var(--text-light-secondary)', fontSize: '1.1rem' }}>
+            Más que código, construyo soluciones. Mi objetivo es fusionar la lógica técnica con un diseño excepcional.
+          </p>
         </motion.div>
 
-        <div className="about-content" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
+          {/* Left Column: Narrative & Stats */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -66,74 +78,80 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: 'var(--text-light)' }}>
-              Creando experiencias digitales <span className="gradient-text">memorables</span>
+              Desarrollador <span className="gradient-text">Full Stack</span> con pasión por el detalle
             </h3>
-            <p className="about-text" style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem', color: 'var(--text-light-secondary)' }}>
-              Soy un Desarrollador Frontend apasionado por transformar ideas en realidad a través del código. 
-              Me especializo en construir interfaces modernas que no solo se ven increíbles, sino que también 
-              funcionan a la perfección en cualquier dispositivo.
-            </p>
-            <p className="about-text" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-light-secondary)' }}>
-              Mi enfoque combina la precisión técnica con la sensibilidad del diseño, asegurando que cada 
-              proyecto sea intuitivo, rápido y accesible. Siempre estoy buscando aprender nuevas tecnologías 
-              para llevar mis habilidades al siguiente nivel.
-            </p>
+            
+            <div className="about-text" style={{ color: 'var(--text-light-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+              <p style={{ marginBottom: '1rem' }}>
+                Mi viaje en el desarrollo web comenzó con la curiosidad de entender cómo funcionan las cosas en internet. Hoy, esa curiosidad se ha transformado en una carrera dedicada a crear aplicaciones web robustas, escalables y visualmente impactantes.
+              </p>
+              <p>
+                Me especializo en el ecosistema de <strong>React</strong> y <strong>TypeScript</strong>, priorizando siempre la experiencia de usuario (UX) y la calidad del código. Creo firmemente que una gran interfaz no solo debe verse bien, sino sentirse instantánea e intuitiva.
+              </p>
+            </div>
+
+            {/* Stats Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginTop: '2rem' }}>
+              {stats.map((stat, index) => (
+                <div key={index} style={{ 
+                  background: 'rgba(255,255,255,0.03)', 
+                  padding: '1.5rem 1rem', 
+                  borderRadius: '12px', 
+                  textAlign: 'center',
+                  border: '1px solid rgba(139, 92, 246, 0.1)'
+                }}>
+                  <div className="gradient-text" style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '0.5rem' }}>{stat.value}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.2' }}>{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="skills-grid"
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', 
-              gap: '1.5rem' 
-            }}
-          >
-            {skills.map((skill, index) => (
+          {/* Right Column: Skills Categories */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {skillCategories.map((category, catIndex) => (
               <motion.div
-                key={index}
-                variants={itemVariants}
-                className="skill-item"
-                whileHover={{ 
-                  y: -5, 
-                  scale: 1.05,
-                  borderColor: skill.color,
-                  boxShadow: `0 4px 20px ${skill.color}40`
-                }}
+                key={catIndex}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + (catIndex * 0.1) }}
+                viewport={{ once: true }}
                 style={{
-                  background: 'rgba(255, 255, 255, 0.03)',
+                  background: 'rgba(30, 30, 63, 0.4)',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.05)',
                   borderRadius: '16px',
-                  padding: '1.5rem 1rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.8rem',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                  cursor: 'default',
-                  transition: 'all 0.3s ease'
+                  padding: '1.5rem',
+                  border: '1px solid rgba(139, 92, 246, 0.1)'
                 }}
               >
-                <div
-                  style={{
-                    color: skill.color,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    filter: `drop-shadow(0 0 8px ${skill.color}60)`
-                  }}
-                >
-                  {skill.icon}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.2rem' }}>
+                  <div style={{ color: 'var(--primary-purple-light)' }}>{category.icon}</div>
+                  <h4 style={{ fontSize: '1.2rem', color: 'var(--text-light)', margin: 0 }}>{category.title}</h4>
                 </div>
-                <span style={{ fontSize: '0.9rem', fontWeight: '500', color: 'var(--text-light)' }}>{skill.name}</span>
+                
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
+                  {category.skills.map((skill, skillIndex) => (
+                    <span 
+                      key={skillIndex}
+                      style={{
+                        background: 'rgba(139, 92, 246, 0.1)',
+                        color: 'var(--text-light)',
+                        padding: '0.4rem 1rem',
+                        borderRadius: '20px',
+                        fontSize: '0.9rem',
+                        border: '1px solid rgba(139, 92, 246, 0.2)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                      }}
+                    >
+                      {skill.name}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
