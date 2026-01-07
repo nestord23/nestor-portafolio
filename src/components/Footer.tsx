@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footer">
       <div className="container">
@@ -18,7 +19,7 @@ const Footer = () => {
             flexWrap: "wrap",
           }}
         >
-          <span>© 2026 Néstor Montenegro. Hecho con</span>
+          <span>© {currentYear} Néstor Montenegro. Hecho con</span>
           <Heart
             size={16}
             style={{ color: "var(--primary-mint)" }}
