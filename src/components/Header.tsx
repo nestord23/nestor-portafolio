@@ -1,79 +1,113 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef, useMemo } from "react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
+  const isScrolling = useRef(false);
+
+  const sections = useMemo(() => [
+    { id: "inicio", name: "Inicio" },
+    { id: "sobre-mi", name: "Sobre mí" },
+    { id: "proyectos", name: "Proyectos" },
+    { id: "experiencia", name: "Experiencia" },
+    { id: "contacto", name: "Contacto" },
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Fase 1: Detección de sección activa por scroll
+      if (!isScrolling.current) {
+        const scrollPosition = window.scrollY + 100;
+
+        for (const section of sections) {
+          const element = document.getElementById(section.id);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (
+              scrollPosition >= offsetTop &&
+              scrollPosition < offsetTop + offsetHeight
+            ) {
+              setActiveSection(section.id);
+              break;
+            }
+          }
+        }
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Llamada inicial
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [sections]);
 
   const scrollToSection = (sectionId: string) => {
+    // Fase 2: Actualizar estado visual inmediatamente
+    setActiveSection(sectionId);
+
+    // Fase 3: Ejecutar transición suave
+    isScrolling.current = true;
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+      const headerElement = document.querySelector('.header') as HTMLElement;
+      const headerHeight = headerElement?.offsetHeight || 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Fase 4: Resetear flag después del scroll
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, 1000);
     }
   };
 
   return (
-    <motion.header 
-      className={`header ${isScrolled ? 'scrolled' : ''}`}
+    <motion.header
+      className={`header ${isScrolled ? "scrolled" : ""}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.2 }}
     >
       <div className="container">
         <nav className="nav">
           <div className="logo gradient-text">
-            <img 
-              src="/IconoPagina.png" 
-              alt="Néstor Montenegro" 
+            <img
+              src="/IconoPagina.png"
+              alt="Néstor Montenegro"
               style={{
-                width: '40px',
-                height: '40px',
-                objectFit: 'contain'
+                width: "40px",
+                height: "40px",
+                objectFit: "contain",
               }}
             />
           </div>
 
           {/* Desktop Navigation */}
           <ul className="nav-links desktop-nav">
-            <li><a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>Inicio</a></li>
-            <li><a href="#sobre-mi" onClick={(e) => { e.preventDefault(); scrollToSection('sobre-mi'); }}>Sobre mí</a></li>
-            <li><a href="#proyectos" onClick={(e) => { e.preventDefault(); scrollToSection('proyectos'); }}>Proyectos</a></li>
-            <li><a href="#experiencia" onClick={(e) => { e.preventDefault(); scrollToSection('experiencia'); }}>Experiencia</a></li>
-            <li><a href="#contacto" onClick={(e) => { e.preventDefault(); scrollToSection('contacto'); }}>Contacto</a></li>
+            {sections.map((section) => (
+              <li key={section.id}>
+                <a
+                  href={`#${section.id}`}
+                  className={activeSection === section.id ? "active" : ""}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(section.id);
+                  }}
+                >
+                  {section.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
-
-      {/* Mobile Navigation Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            className="mobile-nav-overlay"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ul className="mobile-nav-links">
-              <li><a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('inicio'); }}>Inicio</a></li>
-              <li><a href="#sobre-mi" onClick={(e) => { e.preventDefault(); scrollToSection('sobre-mi'); }}>Sobre mí</a></li>
-              <li><a href="#proyectos" onClick={(e) => { e.preventDefault(); scrollToSection('proyectos'); }}>Proyectos</a></li>
-              <li><a href="#experiencia" onClick={(e) => { e.preventDefault(); scrollToSection('experiencia'); }}>Experiencia</a></li>
-              <li><a href="#contacto" onClick={(e) => { e.preventDefault(); scrollToSection('contacto'); }}>Contacto</a></li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.header>
   );
 };

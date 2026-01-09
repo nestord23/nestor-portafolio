@@ -45,6 +45,11 @@
   color: var(--primary-purple-light);
 }
 
+.nav-links a.active {
+  color: var(--primary-purple);
+  font-weight: 600;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -1878,6 +1883,13 @@
 
 .mobile-nav-links a:hover {
   color: var(--primary-purple-light);
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 8px;
+}
+
+.mobile-nav-links a.active {
+  color: var(--primary-purple);
+  font-weight: 600;
   background: rgba(139, 92, 246, 0.1);
   border-radius: 8px;
 }
