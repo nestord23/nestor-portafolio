@@ -11,18 +11,12 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "0.5rem",
-            flexWrap: "wrap",
-          }}
+          className="footer-content"
         >
           <span>© {currentYear} Néstor Montenegro. Hecho con</span>
           <Heart
             size={16}
-            style={{ color: "var(--primary-mint)" }}
+            className="footer-heart-icon"
             fill="var(--primary-mint)"
           />
           <span>y mucho café ☕</span>
@@ -33,12 +27,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          style={{
-            marginTop: "1rem",
-            fontSize: "0.9rem",
-            opacity: 0.8,
-            textAlign: "center",
-          }}
+          className="footer-subtitle"
         >
           Desarrollando experiencias digitales excepcionales
         </motion.p>

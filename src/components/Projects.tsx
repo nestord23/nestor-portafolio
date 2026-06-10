@@ -8,6 +8,7 @@ import {
   FaExternalLinkAlt,
   FaGithub,
 } from "react-icons/fa";
+import SectionHeader from "./SectionHeader";
 import {
   SiBlockchaindotcom,
   SiWeb3Dotjs,
@@ -111,51 +112,14 @@ const Projects = () => {
     <section
       id="proyectos"
       className="projects section"
-      style={{ position: "relative" }}
     >
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          style={{ marginBottom: "4rem", textAlign: "center" }}
-        >
-          <h2
-            className="gradient-text"
-            style={{ fontSize: "2.5rem", marginBottom: "1rem" }}
-          >
-            Proyectos Destacados
-          </h2>
-          <div
-            style={{
-              width: "60px",
-              height: "4px",
-              background: "var(--primary-purple)",
-              margin: "0 auto",
-              borderRadius: "2px",
-            }}
-          ></div>
-          <p
-            style={{
-              maxWidth: "600px",
-              margin: "1.5rem auto 0",
-              color: "var(--text-light-secondary)",
-              fontSize: "1.1rem",
-            }}
-          >
-            Una selección de mis trabajos más recientes, enfocados en React,
-            Blockchain y experiencias de usuario modernas.
-          </p>
-        </motion.div>
+        <SectionHeader
+          title="Proyectos Destacados"
+          subtitle="Una selección de mis trabajos más recientes, enfocados en React, Blockchain y experiencias de usuario modernas."
+        />
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: "2.5rem",
-          }}
-        >
+        <div className="projects-grid">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -164,154 +128,52 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              style={{
-                background: "rgba(30, 30, 63, 0.6)",
-                backdropFilter: "blur(10px)",
-                borderRadius: "20px",
-                overflow: "hidden",
-                border: "1px solid rgba(139, 92, 246, 0.15)",
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)",
-              }}
+              className="project-card"
             >
               {/* Project Header/Image Area */}
-              <div
-                style={{
-                  height: "200px",
-                  background:
-                    "linear-gradient(135deg, var(--primary-purple-dark), var(--bg-dark))",
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.2), transparent)",
-                    zIndex: 1,
-                  }}
-                />
+              <div className="project-card-header">
+                <div className="project-card-overlay" />
 
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  style={{
-                    zIndex: 2,
-                    fontSize: "4rem",
-                    filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.3))",
-                  }}
+                  className="project-card-icon"
                 >
                   {getTechIcon(project.tech[0])}
                 </motion.div>
 
                 {project.featured && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "1rem",
-                      right: "1rem",
-                      background: "rgba(139, 92, 246, 0.9)",
-                      color: "white",
-                      padding: "0.25rem 0.75rem",
-                      borderRadius: "20px",
-                      fontSize: "0.75rem",
-                      fontWeight: "600",
-                      zIndex: 3,
-                      boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-                    }}
-                  >
-                    Featured
+                  <div className="project-featured-badge">
+                    Destacado
                   </div>
                 )}
               </div>
 
               {/* Content */}
-              <div
-                style={{
-                  padding: "2rem",
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: "1.5rem",
-                    marginBottom: "0.75rem",
-                    color: "var(--text-light)",
-                  }}
-                >
+              <div className="project-card-body">
+                <h3 className="project-card-title">
                   {project.title}
                 </h3>
 
-                <p
-                  style={{
-                    color: "var(--text-light-secondary)",
-                    fontSize: "0.95rem",
-                    lineHeight: "1.6",
-                    marginBottom: "1.5rem",
-                    flex: 1,
-                  }}
-                >
+                <p className="project-card-description">
                   {project.description}
                 </p>
 
-                {/* Tech Stack */}
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "0.5rem",
-                    marginBottom: "2rem",
-                  }}
-                >
+                <div className="project-tech-list">
                   {project.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      style={{
-                        fontSize: "0.8rem",
-                        padding: "0.3rem 0.8rem",
-                        borderRadius: "15px",
-                        background: "rgba(139, 92, 246, 0.1)",
-                        color: "var(--primary-purple-light)",
-                        border: "1px solid rgba(139, 92, 246, 0.2)",
-                      }}
-                    >
+                    <span key={i} className="project-tech-tag">
                       {t}
                     </span>
                   ))}
                 </div>
 
-                {/* Actions */}
-                <div
-                  style={{ display: "flex", gap: "1rem", marginTop: "auto" }}
-                >
+                <div className="project-actions">
                   {project.demoUrl && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        flex: 1,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "0.5rem",
-                        padding: "0.8rem",
-                        borderRadius: "10px",
-                        background: "var(--primary-purple)",
-                        color: "white",
-                        fontWeight: "500",
-                        fontSize: "0.9rem",
-                        transition: "all 0.2s",
-                      }}
+                      className="project-btn-demo"
                     >
                       <FaExternalLinkAlt size={14} /> Demo
                     </a>
@@ -320,21 +182,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      flex: 1,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "0.5rem",
-                      padding: "0.8rem",
-                      borderRadius: "10px",
-                      background: "rgba(255,255,255,0.05)",
-                      color: "var(--text-light)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      fontWeight: "500",
-                      fontSize: "0.9rem",
-                      transition: "all 0.2s",
-                    }}
+                    className="project-btn-code"
                   >
                     <FaGithub size={16} /> Code
                   </a>

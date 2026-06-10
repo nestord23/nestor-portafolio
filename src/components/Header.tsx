@@ -81,11 +81,6 @@ const Header = () => {
             <img
               src="/IconoPagina.png"
               alt="Néstor Montenegro"
-              style={{
-                width: "40px",
-                height: "40px",
-                objectFit: "contain",
-              }}
             />
           </div>
 

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Phone, Mail, Linkedin, Github, MapPin } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Phone, Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -7,33 +7,33 @@ const Contact = () => {
       icon: <Phone size={24} />,
       label: "Teléfono",
       value: "+502 57886144",
-      link: "tel:+50257886144"
+      link: "tel:+50257886144",
     },
     {
       icon: <Mail size={24} />,
       label: "Email",
       value: "realdanii135@gmail.com",
-      link: "mailto:realdanii135@gmail.com"
+      link: "mailto:realdanii135@gmail.com",
     },
     {
       icon: <MapPin size={24} />,
       label: "Ubicación",
       value: "Guatemala",
-      link: null
-    }
+      link: null,
+    },
   ];
 
   const socialLinks = [
     {
       icon: <Linkedin size={24} />,
       label: "LinkedIn",
-      url: "https://www.linkedin.com/in/nestor-montenegro"
+      url: "https://www.linkedin.com/in/nestor-montenegro",
     },
     {
       icon: <Github size={24} />,
       label: "GitHub",
-      url: "https://github.com/nestord23"
-    }
+      url: "https://github.com/nestord23",
+    },
   ];
 
   const itemVariants = {
@@ -41,8 +41,8 @@ const Contact = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 
   return (
@@ -55,7 +55,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2>¡Trabajemos juntos!</h2>
-          <p style={{ textAlign: 'center', fontSize: '1.2rem', marginBottom: '2rem' }}>
+          <p className="contact-subtitle">
             Estoy disponible para nuevos proyectos y oportunidades
           </p>
         </motion.div>
@@ -68,10 +68,10 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 style={{ marginBottom: '2rem', color: 'var(--text-dark)' }}>
+            <h3>
               Información de contacto
             </h3>
-            
+
             {contactInfo.map((item, index) => (
               <motion.div
                 key={index}
@@ -83,22 +83,17 @@ const Contact = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="contact-icon">
-                  {item.icon}
-                </div>
+                <div className="contact-icon">{item.icon}</div>
                 <div>
-                  <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>
+                  <div className="contact-item-label">
                     {item.label}
                   </div>
                   {item.link ? (
-                    <a 
-                      href={item.link} 
-                      style={{ color: 'var(--text-dark)', textDecoration: 'none' }}
-                    >
+                    <a href={item.link}>
                       {item.value}
                     </a>
                   ) : (
-                    <span style={{ color: 'var(--text-dark)' }}>
+                    <span className="contact-item-value">
                       {item.value}
                     </span>
                   )}
@@ -106,8 +101,8 @@ const Contact = () => {
               </motion.div>
             ))}
 
-            <div style={{ marginTop: '3rem' }}>
-              <h4 style={{ marginBottom: '1rem', color: 'var(--text-dark)' }}>
+            <div className="contact-social-section">
+              <h4>
                 Sígueme en redes
               </h4>
               <div className="social-links">
@@ -134,43 +129,26 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            style={{
-              background: 'rgba(255, 255, 255, 0.2)',
-              borderRadius: '16px',
-              padding: '2rem',
-              backdropFilter: 'blur(10px)'
-            }}
+            className="contact-form-card"
           >
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--text-dark)' }}>
+            <h3>
               ¿Tienes un proyecto en mente?
             </h3>
-            <p style={{ color: 'var(--text-dark)', marginBottom: '2rem', lineHeight: '1.6' }}>
-              Me especializo en crear experiencias digitales excepcionales. 
-              Desde sitios web corporativos hasta aplicaciones interactivas, 
+            <p>
+              Me especializo en crear experiencias digitales excepcionales.
+              Desde sitios web corporativos hasta aplicaciones interactivas,
               estoy aquí para convertir tus ideas en realidad.
             </p>
-            
-            <div style={{ marginBottom: '1.5rem' }}>
-              <h4 style={{ color: 'var(--text-dark)', marginBottom: '1rem' }}>
+
+            <div className="contact-services">
+              <h4>
                 Servicios que ofrezco:
               </h4>
-              <ul style={{ 
-                listStyle: 'none', 
-                padding: 0, 
-                color: 'var(--text-dark)' 
-              }}>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  ✨ Desarrollo Frontend (React, HTML5, CSS3)
-                </li>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  🎨 Diseño UX/UI
-                </li>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  🌐 Desarrollo WordPress
-                </li>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  📱 Diseño Responsivo
-                </li>
+              <ul className="contact-services-list">
+                <li>✨ Desarrollo Frontend (React, HTML5, CSS3)</li>
+                <li>🎨 Diseño UX/UI</li>
+                <li>🌐 Desarrollo WordPress</li>
+                <li>📱 Diseño Responsivo</li>
               </ul>
             </div>
           </motion.div>

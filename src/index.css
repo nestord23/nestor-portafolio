@@ -14,9 +14,16 @@
   --text-light-secondary: #d1d5db; /* Texto claro secundario */
   --text-muted: #9ca3af; /* Texto atenuado */
   --shadow: rgba(139, 92, 246, 0.2);
+  --primary-mint: #10b981; /* Verde menta */
+  --primary-blue: #3b82f6; /* Azul primario */
+  --text-on-accent: #e5e7eb; /* Texto sobre acentos */
   --shadow-dark: rgba(0, 0, 0, 0.5);
 
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
   line-height: 1.6;
   font-weight: 400;
@@ -176,7 +183,10 @@ button:active {
   z-index: 1000;
   box-shadow: 0 8px 30px rgba(109, 40, 217, 0.18);
   color: var(--text-light);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
   outline: none;
 }
 
@@ -190,45 +200,12 @@ button:active {
 }
 
 .scroll-to-top:focus {
-  box-shadow: 0 0 0 6px rgba(109, 40, 217, 0.14),
+  box-shadow:
+    0 0 0 6px rgba(109, 40, 217, 0.14),
     0 10px 30px rgba(109, 40, 217, 0.12);
 }
 
-/* Slightly smaller on small screens */
-@media (max-width: 480px) {
-  .scroll-to-top {
-    width: 48px;
-    height: 48px;
-    bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px));
-    right: calc(1.4rem + env(safe-area-inset-right, 0px));
-  }
-}
 
-/* Ajustes para móviles muy pequeños y asegurar touch-target >=44px */
-@media (max-width: 360px) {
-  .scroll-to-top {
-    width: 52px;
-    height: 52px;
-    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
-    right: calc(1rem + env(safe-area-inset-right, 0px));
-    box-shadow: 0 14px 30px rgba(109, 40, 217, 0.2);
-  }
-
-  .scroll-to-top svg {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-/* Reduce tamaño si el viewport es muy estrecho (evita cubrir elementos) */
-@media (max-width: 320px) {
-  .scroll-to-top {
-    width: 48px;
-    height: 48px;
-    bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
-    right: calc(0.8rem + env(safe-area-inset-right, 0px));
-  }
-}
 
 /* Scrollbar personalizado */
 ::-webkit-scrollbar {
@@ -248,71 +225,7 @@ button:active {
   background: var(--primary-purple-light);
 }
 
-/* Optimizaciones específicas para dispositivos móviles */
 
-/* Mejora del área táctil para botones y enlaces */
-@media (max-width: 768px) {
-  button,
-  a,
-  .nav-links a {
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-links a {
-    padding: 12px 16px;
-  }
-
-  /* Mejora la legibilidad del texto en móviles */
-  body {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
-
-  /* Optimiza las transiciones para dispositivos táctiles */
-  * {
-    -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
-  }
-
-  /* Mejora el scroll en iOS */
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Evita el zoom accidental en inputs */
-  input,
-  textarea,
-  select {
-    font-size: 16px;
-  }
-
-  /* Mejora la visualización de imágenes en móviles */
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Optimiza el espaciado para pantallas táctiles */
-  .social-link,
-  .contact-item {
-    margin: 8px 0;
-  }
-
-  /* Mejora la legibilidad en pantallas pequeñas */
-  .about-text,
-  .job-duties li {
-    line-height: 1.6;
-  }
-
-  /* Evita el desbordamiento horizontal */
-  .container {
-    overflow-x: hidden;
-  }
-}
 
 /* Optimizaciones específicas para iPhone */
 @supports (-webkit-appearance: none) {
@@ -340,6 +253,118 @@ button:active {
   }
 }
 
+/* Responsive Design - Consolidated */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  body {
+    font-size: 1rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  button,
+  a,
+  .nav-links a {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    padding: 12px 16px;
+  }
+
+  * {
+    -webkit-tap-highlight-color: rgba(139, 92, 246, 0.3);
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .social-link,
+  .contact-item {
+    margin: 8px 0;
+  }
+
+  .about-text,
+  .job-duties li {
+    line-height: 1.6;
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .gradient-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--primary-purple);
+  }
+
+  .scroll-to-top {
+    width: 48px;
+    height: 48px;
+    bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1.4rem + env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .scroll-to-top {
+    width: 52px;
+    height: 52px;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1rem + env(safe-area-inset-right, 0px));
+    box-shadow: 0 14px 30px rgba(109, 40, 217, 0.2);
+  }
+
+  .scroll-to-top svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  .scroll-to-top {
+    width: 48px;
+    height: 48px;
+    bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+    right: calc(0.8rem + env(safe-area-inset-right, 0px));
+  }
+}
+
 /* Modo oscuro para dispositivos que lo soporten */
 @media (prefers-color-scheme: dark) {
   @media (max-width: 768px) {
@@ -358,39 +383,4 @@ button:active {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .container {
-    max-width: 900px;
-  }
-}
 
-@media (max-width: 768px) {
-  :root {
-    font-size: 14px;
-  }
-
-  body {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    font-size: 13px;
-  }
-
-  .gradient-text {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    /* Fallback para navegadores que no soporten */
-    color: var(--primary-purple);
-  }
-}
-
-@media (max-width: 360px) {
-  :root {
-    font-size: 12px;
-  }
-}

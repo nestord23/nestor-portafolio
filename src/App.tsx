@@ -13,13 +13,7 @@ const Contact = lazy(() => import('./components/Contact'));
 
 // Loading fallback
 const PageLoader = () => (
-  <div style={{ 
-    height: '50vh', 
-    display: 'flex', 
-    alignItems: 'center', 
-    justifyContent: 'center',
-    color: 'var(--primary-purple)' 
-  }}>
+  <div className="page-loader">
     Cargando...
   </div>
 );

@@ -75,39 +75,20 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          style={{ marginTop: "4rem", textAlign: "center" }}
+          className="cert-section"
         >
           <h3>Certificaciones y Educación</h3>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "1.5rem",
-              marginTop: "2rem",
-            }}
-          >
-            <div className="card">
-              <h4
-                style={{ color: "var(--primary-blue)", marginBottom: "0.5rem" }}
-              >
-                Diseño Gráfico
-              </h4>
+          <div className="cert-grid">
+            <div className="card cert-card">
+              <h4>Diseño Gráfico</h4>
               <p>Formación en diseño visual y comunicación gráfica</p>
             </div>
-            <div className="card">
-              <h4
-                style={{ color: "var(--primary-blue)", marginBottom: "0.5rem" }}
-              >
-                Desarrollo Frontend
-              </h4>
+            <div className="card cert-card">
+              <h4>Desarrollo Frontend</h4>
               <p>Especialización en tecnologías web modernas</p>
             </div>
-            <div className="card">
-              <h4
-                style={{ color: "var(--primary-blue)", marginBottom: "0.5rem" }}
-              >
-                UX/UI Design
-              </h4>
+            <div className="card cert-card">
+              <h4>UX/UI Design</h4>
               <p>Certificación en experiencia de usuario</p>
             </div>
           </div>
