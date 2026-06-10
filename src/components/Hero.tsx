@@ -31,7 +31,7 @@ const Hero = () => {
             >
               <div className="profile-image">
                 <img 
-                  src="/fotoPerfil.jpg" 
+                  src={`${import.meta.env.BASE_URL}fotoPerfil.jpg`} 
                   alt="Néstor Montenegro" 
                 />
               </div>

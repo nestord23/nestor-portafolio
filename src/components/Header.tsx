@@ -79,7 +79,7 @@ const Header = () => {
         <nav className="nav">
           <div className="logo gradient-text">
             <img
-              src="/IconoPagina.png"
+              src={`${import.meta.env.BASE_URL}IconoPagina.png`}
               alt="Néstor Montenegro"
             />
           </div>
