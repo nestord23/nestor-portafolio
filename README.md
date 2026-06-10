@@ -1,93 +1,76 @@
-# ⚡ Portafolio de Néstor Montenegro
+# Portafolio — Néstor Montenegro
 
-Un portafolio web moderno y de alto rendimiento para Néstor Montenegro, Desarrollador Full Stack especializado en el ecosistema React. Diseñado con un enfoque en estética premium, animaciones fluidas y optimización técnica.
+[![Deploy to GitHub Pages](https://github.com/nestord23/portafolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/nestord23/portafolio/actions/workflows/deploy.yml)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)](https://vite.dev)
 
-![Preview](./public/IconoPagina.png)
+Portafolio web profesional con diseño moderno, animaciones fluidas y arquitectura optimizada. Construido con React 19, TypeScript y Vite.
 
-## 🌟 Características Destacadas
+## Stack Tecnológico
 
-- **🎨 Diseño Premium**: Interfaz "Dark Mode" con estética Glassmorphism, degradados vibrantes en tonos púrpura y efectos de neón.
-- **📱 Totalmente Responsivo**: Experiencia nativa en móviles con menú de navegación táctil y layouts adaptables.
-- **⚡ Alto Rendimiento**: 
-  - **Lazy Loading**: Carga diferida de secciones pesadas para un inicio instantáneo.
-  - **Code Splitting**: Optimización de bundles con Vite.
-- **✨ Animaciones Avanzadas**: 
-  - Efectos de escritura automática (`typewriter-effect`).
-  - Efectos de inclinación 3D (`react-parallax-tilt`).
-  - Transiciones suaves entre secciones con `framer-motion`.
-- **🛠️ Arquitectura Limpia**: Código modular, tipado estricto con TypeScript y componentes reutilizables.
+| Categoría | Tecnologías |
+|-----------|-------------|
+| **Core** | React 19, TypeScript 5.8, Vite 7 |
+| **Animaciones** | Framer Motion 12, react-parallax-tilt, typewriter-effect |
+| **UI / Iconos** | Lucide React, React Icons |
+| **Estilos** | CSS3 Variables, Glassmorphism, diseño responsivo |
+| **Calidad** | ESLint, SWC (build rápido) |
 
-## 🛠️ Stack Tecnológico
+## Scripts
 
-### Core
-- **React 19** - Biblioteca de UI
-- **TypeScript** - Seguridad de tipos y escalabilidad
-- **Vite** - Build tool de última generación
-
-### Estilos & UI
-- **CSS3 Variables** - Sistema de diseño flexible
-- **Framer Motion** - Motor de animaciones
-- **Lucide React & React Icons** - Iconografía vectorial
-- **Glassmorphism** - Estilo visual translúcido
-
-### Librerías Adicionales
-- `react-parallax-tilt` - Efectos interactivos en imágenes
-- `typewriter-effect` - Animaciones de texto dinámicas
-
-## 📱 Secciones
-
-1. **🏠 Hero**: Presentación impactante con efecto parallax y texto dinámico.
-2. **👨‍💻 Sobre Mí**: Narrativa profesional, estadísticas clave y grid de habilidades categorizadas.
-3. **🚀 Proyectos**: Grid moderno de tarjetas con efectos hover, stack tecnológico y enlaces a demos/código.
-4. **💼 Experiencia**: Timeline vertical detallando trayectoria profesional.
-5. **📞 Contacto**: Información directa y enlaces a redes sociales.
-
-## 🎨 Sistema de Diseño
-
-El proyecto utiliza un sistema de variables CSS para mantener la consistencia:
-
-```css
-:root {
-  --primary-purple: #8b5cf6;       /* Color principal */
-  --primary-purple-light: #a78bfa; /* Acentos brillantes */
-  --primary-purple-dark: #7c3aed;  /* Profundidad */
-  --bg-dark: #0f0f23;             /* Fondo principal */
-  --bg-card: rgba(30, 30, 63, 0.5); /* Tarjetas translúcidas */
-  --text-light: #ffffff;          /* Texto principal */
-}
+```bash
+npm run dev        # Servidor de desarrollo (puerto 3000)
+npm run build      # Compilar para producción
+npm run preview    # Vista previa del build
+npm run lint       # Análisis de código
 ```
 
-## 🚀 Instalación y Desarrollo
+## Despliegue
 
-1. **Clonar el repositorio**
+El sitio se despliega automáticamente a GitHub Pages mediante GitHub Actions al hacer push a la rama `main`.
+
+```bash
+git push origin main
+```
+
+Sitio en vivo: [nestord23.github.io/portafolio](https://nestord23.github.io/portafolio)
+
+## Secciones
+
+- **Hero** — Presentación con efecto de escritura dinámica y parallax 3D
+- **Sobre mí** — Narrativa profesional, estadísticas y habilidades categorizadas
+- **Proyectos** — Grid de tarjetas con stack tecnológico y enlaces a demo / código
+- **Experiencia** — Timeline profesional con certificaciones
+- **Contacto** — Información de contacto y redes sociales
+
+## Sistema de Diseño
+
+Esquema de color oscuro con acentos púrpura y efecto glassmorphism. Los valores de diseño están centralizados en variables CSS:
+
+```css
+--primary-purple: #6d28d9;
+--primary-purple-light: #865efd;
+--bg-dark: #0f0f23;
+--bg-card: #1e1e3f;
+--text-light: #e5e7eb;
+```
+
+## Instalación
+
 ```bash
 git clone https://github.com/nestord23/portafolio.git
 cd portafolio
-```
-
-2. **Instalar dependencias**
-```bash
 npm install
-```
-
-3. **Iniciar servidor de desarrollo**
-```bash
 npm run dev
 ```
 
-4. **Construir para producción**
-```bash
-npm run build
-```
+## Contacto
 
-## 📧 Contacto
-
-- **Email**: realdanii135@gmail.com
-- **Teléfono**: +502 57886144
-- **LinkedIn**: [in/Nestor](https://linkedin.com/in/Nestor)
+- **Email**: [realdanii135@gmail.com](mailto:realdanii135@gmail.com)
+- **LinkedIn**: [linkedin.com/in/nestor-montenegro](https://www.linkedin.com/in/nestor-montenegro)
 - **GitHub**: [github.com/nestord23](https://github.com/nestord23)
 
 ---
 
-**Desarrollado con ❤️ por Néstor Montenegro**
-*"Transformando ideas en experiencias digitales memorables"*
+*Desarrollado por Néstor Montenegro*
