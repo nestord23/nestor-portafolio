@@ -1,8 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/portafolio/",
   plugins: [react()],
   server: {
     port: 3000,
@@ -11,10 +12,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          ui: ['framer-motion', 'lucide-react', 'react-icons'],
+          vendor: ["react", "react-dom"],
+          ui: ["framer-motion", "lucide-react", "react-icons"],
         },
       },
     },
   },
-})
+});
