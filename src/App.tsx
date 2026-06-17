@@ -1,19 +1,21 @@
 import { lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import ShaderBackground from "./components/ShaderBackground";
 
+const ShaderBackground = lazy(() => import("./components/ShaderBackground"));
 const About = lazy(() => import("./components/About"));
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
 const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
+const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
 
 const App = () => {
   return (
     <>
-      <ShaderBackground />
+      <Suspense fallback={null}>
+        <ShaderBackground />
+      </Suspense>
       <Header />
       <Hero />
       <Suspense fallback={
@@ -26,8 +28,10 @@ const App = () => {
         <Experience />
         <Contact />
       </Suspense>
-      <Footer />
-      <ScrollToTop />
+      <Suspense fallback={null}>
+        <Footer />
+        <ScrollToTop />
+      </Suspense>
     </>
   );
 };
