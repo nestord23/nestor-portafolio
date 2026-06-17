@@ -1,5 +1,16 @@
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  BufferGeometry,
+  BufferAttribute,
+  ShaderMaterial,
+  Vector2,
+  AdditiveBlending,
+  Points,
+  Timer,
+} from "three";
 
 const vertexShader = `
   attribute float aSize;
@@ -70,12 +81,12 @@ const ShaderBackground = () => {
     const height = window.innerHeight;
     const count = getParticleCount();
 
-    const scene = new THREE.Scene();
+    const scene = new Scene();
 
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 20);
+    const camera = new PerspectiveCamera(75, width / height, 0.1, 20);
     camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new WebGLRenderer({
       alpha: true,
       antialias: true,
     });
@@ -83,7 +94,7 @@ const ShaderBackground = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    const geometry = new THREE.BufferGeometry();
+    const geometry = new BufferGeometry();
     const positions = new Float32Array(count * 3);
     const sizes = new Float32Array(count);
     const phases = new Float32Array(count);
@@ -98,28 +109,28 @@ const ShaderBackground = () => {
       speeds[i] = Math.random() * 0.6 + 0.2;
     }
 
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute("aSize", new THREE.BufferAttribute(sizes, 1));
-    geometry.setAttribute("aPhase", new THREE.BufferAttribute(phases, 1));
-    geometry.setAttribute("aSpeed", new THREE.BufferAttribute(speeds, 1));
+    geometry.setAttribute("position", new BufferAttribute(positions, 3));
+    geometry.setAttribute("aSize", new BufferAttribute(sizes, 1));
+    geometry.setAttribute("aPhase", new BufferAttribute(phases, 1));
+    geometry.setAttribute("aSpeed", new BufferAttribute(speeds, 1));
 
-    const material = new THREE.ShaderMaterial({
+    const material = new ShaderMaterial({
       uniforms: {
         uTime: { value: 0 },
-        uMouse: { value: new THREE.Vector2(0, 0) },
+        uMouse: { value: new Vector2(0, 0) },
       },
       vertexShader,
       fragmentShader,
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: AdditiveBlending,
     });
 
-    const particles = new THREE.Points(geometry, material);
+    const particles = new Points(geometry, material);
     scene.add(particles);
 
     const targetMouse = { x: 0, y: 0 };
-    const currentMouse = new THREE.Vector2(0, 0);
+    const currentMouse = new Vector2(0, 0);
 
     const handleMouseMove = (e: MouseEvent) => {
       targetMouse.x = (e.clientX / width) * 2 - 1;
@@ -146,7 +157,7 @@ const ShaderBackground = () => {
     window.addEventListener("resize", handleResize);
 
     let running = true;
-    const timer = new THREE.Timer();
+    const timer = new Timer();
 
     const animate = () => {
       if (!running) return;
