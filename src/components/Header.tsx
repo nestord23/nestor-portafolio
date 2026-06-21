@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <motion.header
       className={`header fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-panel" : "bg-transparent"
+        isScrolled ? "glass-panel  backdrop-blur-2xl" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
