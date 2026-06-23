@@ -17,53 +17,24 @@ Portafolio web profesional con diseño moderno, animaciones fluidas y arquitectu
 | **Estilos** | CSS3 Variables, Glassmorphism, diseño responsivo |
 | **Calidad** | ESLint, SWC (build rápido) |
 
-## Scripts
+## Sobre mí
 
-```bash
-npm run dev        # Servidor de desarrollo (puerto 3000)
-npm run build      # Compilar para producción
-npm run preview    # Vista previa del build
-npm run lint       # Análisis de código
-```
+Desarrollador **Full Stack** con pasión por el detalle.
 
-## Despliegue
+Mi viaje en el desarrollo web comenzó con la curiosidad de entender cómo funcionan las cosas en internet. Hoy, esa curiosidad se ha transformado en una carrera dedicada a crear aplicaciones web robustas, escalables y visualmente impactantes.
 
-El sitio se despliega automáticamente a GitHub Pages mediante GitHub Actions al hacer push a la rama `main`.
+Me especializo en el ecosistema de **React** y **TypeScript**, priorizando siempre la experiencia de usuario (UX) y la calidad del código. Creo firmemente que una gran interfaz no solo debe verse bien, sino sentirse instantánea e intuitiva.
 
-```bash
-git push origin main
-```
+**+2** años de experiencia · **+15** proyectos completados · **+10** tecnologías dominadas
 
-Sitio en vivo: [nestord23.github.io/portafolio](https://nestord23.github.io/portafolio)
+### Habilidades
 
-## Secciones
-
-- **Hero** — Presentación con efecto de escritura dinámica y parallax 3D
-- **Sobre mí** — Narrativa profesional, estadísticas y habilidades categorizadas
-- **Proyectos** — Grid de tarjetas con stack tecnológico y enlaces a demo / código
-- **Experiencia** — Timeline profesional con certificaciones
-- **Contacto** — Información de contacto y redes sociales
-
-## Sistema de Diseño
-
-Esquema de color oscuro con acentos púrpura y efecto glassmorphism. Los valores de diseño están centralizados en variables CSS:
-
-```css
---primary-purple: #6d28d9;
---primary-purple-light: #865efd;
---bg-dark: #0f0f23;
---bg-card: #1e1e3f;
---text-light: #e5e7eb;
-```
-
-## Instalación
-
-```bash
-git clone https://github.com/nestord23/portafolio.git
-cd portafolio
-npm install
-npm run dev
-```
+| Categoría | Tecnologías |
+|-----------|-------------|
+| **Frontend** | React, TypeScript, HTML5/CSS3, Tailwind/Sass |
+| **Backend & Tools** | Node.js, Git/GitHub, Vite/Webpack |
+| **Diseño & UX** | Figma, Responsive Design, Accesibilidad, UI Animation |
+| **Bases de Datos** | PostgreSQL, MySQL, Prisma |
 
 ## Contacto
 
