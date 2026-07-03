@@ -7,9 +7,11 @@ const Experience = () => {
       company: "Cz-Labs",
       period: "feb 2025 — jun 2025",
       duties: [
-        "Participé activamente en el desarrollo de una plataforma de staking, diseñando y optimizando scripts para la creación masiva de más de 1,000 NFTs de prueba.",
-        "Adquirí experiencia práctica en la implementación y desarrollo de smart contracts utilizando Rust, fortaleciendo mis habilidades en programación segura y eficiente para blockchain.",
-        "Apasionado por innovar y seguir aprendiendo tecnologías descentralizadas.",
+        "Desarrollo y mantenimiento de aplicaciones web con React, JavaScript, HTML5 y CSS3.",
+        "Integración y consumo de APIs REST para conectar el frontend con servicios backend.",
+        "Construcción de componentes reutilizables para optimizar el desarrollo y facilitar el mantenimiento.",
+        "Optimización del rendimiento de las aplicaciones y gestión del código mediante Git y GitHub.",
+        "Trabajo colaborativo bajo metodología Scrum en equipos multidisciplinarios.",
       ],
     },
     {
@@ -17,18 +19,20 @@ const Experience = () => {
       company: "Recaudadora y Calificadora de Créditos",
       period: "sep 2019 — feb 2025",
       duties: [
-        "Análisis de bases de datos y generación de reportes",
-        "Uso de herramientas digitales para sistematización de información",
-        "Gestión de carteras de clientes y seguimiento de procesos",
-        "Implementación de mejoras en procesos administrativos",
+        "Administración y análisis de bases de datos SQL para generación de reportes.",
+        "Automatización de procesos internos para mejorar la eficiencia operativa.",
+        "Elaboración de documentación técnica de los procesos implementados.",
+        "Soporte operativo en la gestión de carteras de clientes.",
       ],
     },
   ];
 
   const certifications = [
-    { title: "Diseño Gráfico", desc: "Formación en diseño visual y comunicación gráfica" },
-    { title: "Desarrollo Frontend", desc: "Especialización en tecnologías web modernas" },
-    { title: "UX/UI Design", desc: "Certificación en experiencia de usuario" },
+    { title: "JavaScript de Cero a Experto", desc: "Formación completa en JavaScript moderno" },
+    { title: "Node.js - Creando APIs", desc: "Desarrollo de APIs REST con Node.js" },
+    { title: "React de Cero a Experto", desc: "Especialización en React y su ecosistema" },
+    { title: "Power BI desde Cero", desc: "Análisis de datos y visualización" },
+    { title: "Tailwind CSS con Ejemplos Reales", desc: "Diseño de interfaces con Tailwind CSS" },
   ];
 
   return (
@@ -97,7 +101,7 @@ const Experience = () => {
           <h3 className="text-center font-mono text-sm text-white/60 tracking-wider uppercase mb-8">
             Certificaciones y Educación
           </h3>
-          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {certifications.map((cert) => (
               <div key={cert.title} className="glow-border p-5 pt-6 pb-6 text-center">
                 <h4 className="text-white/80 font-sora font-bold text-sm mb-2">

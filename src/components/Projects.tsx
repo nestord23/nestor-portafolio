@@ -49,7 +49,7 @@ const Projects = () => {
       id: 1,
       title: "Hack Chat",
       description:
-        "Chat en tiempo real con WebSockets, implementado en backend y frontend, para comunicación instantánea entre usuarios.",
+        "Aplicación de mensajería en tiempo real. El frontend consume una API con WebSockets para la comunicación entre usuarios.",
       tech: ["React", "WebSockets", "Node.js"],
       githubUrl: "https://github.com/nestord23/chat_FE",
       featured: true,
@@ -58,7 +58,7 @@ const Projects = () => {
       id: 2,
       title: "book-picker",
       description:
-        "Aplicación Web para almacenar Lecturas y Realizar Clasificación de lecturas y Elegir Próximas lecturas",
+        "Aplicación web para gestionar lecturas personales. Permite clasificar libros y seleccionar próximas lecturas.",
       tech: ["Astro", "JavaScript", "CSS3", "Node.js"],
       githubUrl: "https://github.com/nestord23/book-picker-fe",
       featured: true,
@@ -67,8 +67,8 @@ const Projects = () => {
       id: 3,
       title: "Money Control",
       description:
-        "Aplicación para gestión y control de presupuestos personales. Permite registrar ingresos, gastos y visualizar el balance financiero.",
-      tech: ["React", "", "Finance"],
+        "Aplicación para el control de presupuestos personales. Permite registrar ingresos y gastos, y visualizar el balance financiero.",
+      tech: ["React", "JavaScript", "CSS3"],
       githubUrl: "https://github.com/nestord23/MoneyControl_FE.git",
       featured: true,
     },
@@ -76,8 +76,8 @@ const Projects = () => {
       id: 4,
       title: "MintForge",
       description:
-        "Herramienta automatizada para crear colecciones NFT y acuñar NFTs vinculados a ellas.",
-      tech: ["Web3", "Node.js", "TypeScript"],
+        "Herramienta para crear colecciones de tokens no fungibles. Desarrollada con Node.js y TypeScript.",
+      tech: ["Node.js", "TypeScript", "JavaScript"],
       githubUrl: "https://github.com/nestord23/MintForge.git",
       featured: true,
     },
@@ -85,7 +85,7 @@ const Projects = () => {
       id: 5,
       title: "El Señor de la Merced",
       description:
-        "Aplicación web moderna desarrollada con React. Proyecto que demuestra habilidades en desarrollo frontend con una interfaz intuitiva.",
+        "Aplicación web desarrollada con React. Interfaz intuitiva y diseño responsivo.",
       tech: ["React", "HTML5", "CSS3"],
       githubUrl: "https://github.com/nestord23/el-senor-de-la-merced",
       demoUrl: "https://elsenordelamerced.vercel.app/",
@@ -95,8 +95,8 @@ const Projects = () => {
       id: 6,
       title: "SixEyes Bot",
       description:
-        "Bot de Discord para buscar información de NBA, videos de YouTube y más, desarrollado con TypeScript y discord.js.",
-      tech: ["Node.js", "TypeScript", "API"],
+        "Bot para Discord que consulta información deportiva y multimedia a través de APIs. Desarrollado con TypeScript.",
+      tech: ["Node.js", "TypeScript", "JavaScript"],
       githubUrl: "https://github.com/nestord23/sixeyes-bot",
       featured: false,
     },
@@ -107,7 +107,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           title="Proyectos Destacados"
-          subtitle="Una selección de mis trabajos más recientes, enfocados en React, Blockchain y experiencias de usuario modernas."
+          subtitle="Una selección de mis trabajos más recientes, desarrollados con React, JavaScript y TypeScript."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

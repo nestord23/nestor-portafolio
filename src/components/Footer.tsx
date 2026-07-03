@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,15 +7,13 @@ const Footer = () => {
     <footer className="py-12 px-6 border-t border-white/5">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
-          className="flex items-center justify-center gap-1.5 text-slate/50 text-sm font-mono"
+          className="text-slate/50 text-sm font-mono"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-          <span>© {currentYear} Néstor Montenegro. Hecho con</span>
-          <Heart size={14} className="text-lime-neon" fill="#abd600" />
-          <span>y mucho café</span>
+          <span>© {currentYear} Néstor Montenegro · Desarrollador Web</span>
         </motion.div>
 
         <motion.p
@@ -26,7 +23,7 @@ const Footer = () => {
           transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Desarrollando experiencias digitales excepcionales
+          Disponible para oportunidades profesionales
         </motion.p>
       </div>
     </footer>

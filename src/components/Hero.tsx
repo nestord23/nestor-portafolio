@@ -64,8 +64,9 @@ const Hero = () => {
             <Typewriter
               options={{
                 strings: [
-                  "> Desarrollador Frontend",
-                  "> React Developer",
+                  "> Desarrollador Web",
+                  "> React · TypeScript",
+                  "> Estudiante de Ingeniería en Sistemas",
                 ],
                 autoStart: true,
                 loop: true,
@@ -77,7 +78,7 @@ const Hero = () => {
           </h2>
 
           <div className="flex flex-wrap gap-3 mb-6 justify-center lg:justify-start">
-            {["React", "TypeScript", "UX/UI"].map((tech) => (
+            {["React", "JavaScript", "TypeScript"].map((tech) => (
               <span key={tech} className="terminal-tag">
                 {tech}
               </span>
@@ -85,9 +86,10 @@ const Hero = () => {
           </div>
 
           <p className="text-slate/80 max-w-xl leading-relaxed font-sora text-sm md:text-base">
-            Especializado en crear experiencias digitales limpias, funcionales y
-            centradas en el usuario. Transformo ideas en interfaces modernas y
-            accesibles.
+            Construyo aplicaciones web con tecnologías modernas. Me enfoco en
+            crear interfaces responsivas, consumir APIs REST y desarrollar
+            componentes reutilizables. Estudiante de Ingeniería en Sistemas con
+            experiencia en metodologías ágiles y trabajo en equipo.
           </p>
         </motion.div>
       </div>

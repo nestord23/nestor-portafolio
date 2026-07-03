@@ -37,9 +37,9 @@ const Contact = () => {
   ];
 
   const services = [
-    "Desarrollo Frontend (React, HTML5, CSS3)",
-    "Diseño UX/UI",
-    "Desarrollo WordPress",
+    "Desarrollo Frontend (React, JavaScript, TypeScript)",
+    "Integración de APIs REST",
+    "Construcción de componentes reutilizables",
     "Diseño Responsivo",
   ];
 
@@ -54,10 +54,10 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-sora font-bold gradient-text mb-3">
-            ¡Trabajemos juntos!
+            Contacto
           </h2>
           <p className="font-mono text-sm text-slate/60">
-            Estoy disponible para nuevos proyectos y oportunidades
+            Abierto a oportunidades laborales en desarrollo web
           </p>
         </motion.div>
 
@@ -127,12 +127,13 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h3 className="font-mono text-sm text-white/60 tracking-wider uppercase mb-4">
-              ¿Tienes un proyecto en mente?
+              ¿Buscas un desarrollador web?
             </h3>
             <p className="text-slate/60 text-sm leading-relaxed mb-6">
-              Me especializo en crear experiencias digitales excepcionales.
-              Desde sitios web corporativos hasta aplicaciones interactivas,
-              estoy aquí para convertir tus ideas en realidad.
+              Actualmente abierto a oportunidades en desarrollo web. Si buscas
+              a alguien con experiencia en React, JavaScript y TypeScript,
+              con capacidad de aprendizaje y orientación a resultados,
+              estaré encantado de conversar.
             </p>
 
             <h4 className="font-mono text-xs text-slate/50 tracking-wider uppercase mb-3">
