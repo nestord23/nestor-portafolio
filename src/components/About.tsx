@@ -1,47 +1,58 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Palette, Terminal, Layout, Code2, GitBranch, Eye } from "lucide-react";
 import SectionHeader from "./SectionHeader";
+import SkillCard, { type SkillCategory } from "./SkillCard";
+
+interface Stat {
+  label: string;
+  value: string;
+}
+
+const STATS: Stat[] = [
+  { label: "Años de Experiencia", value: "+2" },
+  { label: "Proyectos Completados", value: "+15" },
+  { label: "Certificaciones", value: "5" },
+];
+
+const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    title: "Lenguajes",
+    icon: Code2,
+    skills: ["JavaScript ES6+", "TypeScript", "HTML5", "CSS3", "C#"],
+  },
+  {
+    title: "Frontend",
+    icon: Layout,
+    skills: ["React", "Angular (básico)", "Tailwind CSS", "Sass", "Bootstrap", "Redux", "Context API"],
+  },
+  {
+    title: "Backend & APIs",
+    icon: Terminal,
+    skills: ["Node.js", "REST", "Fetch API", "Axios"],
+  },
+  {
+    title: "Herramientas",
+    icon: GitBranch,
+    skills: ["Git", "GitHub", "Bitbucket", "Vite", "Webpack", "NPM", "Yarn", "Linux"],
+  },
+  {
+    title: "Diseño",
+    icon: Palette,
+    skills: ["Responsive Design", "UX/UI", "Figma"],
+  },
+  {
+    title: "Metodologías",
+    icon: Eye,
+    skills: ["Scrum", "Ágil"],
+  },
+];
+
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const About = () => {
-  const stats = [
-    { label: "Años de Experiencia", value: "+2" },
-    { label: "Proyectos Completados", value: "+15" },
-    { label: "Certificaciones", value: "5" },
-  ];
-
-  const skillCategories = [
-    {
-      title: "Lenguajes",
-      icon: <Code2 size={18} />,
-      skills: ["JavaScript ES6+", "TypeScript", "HTML5", "CSS3","C#"],
-    },
-    {
-      title: "Frontend",
-      icon: <Layout size={18} />,
-      skills: ["React", "Angular (básico)", "Tailwind CSS", "Sass", "Bootstrap", "Redux", "Context API"],
-    },
-    {
-      title: "Backend & APIs",
-      icon: <Terminal size={18} />,
-      skills: ["Node.js", "REST", "Fetch API", "Axios"],
-    },
-    {
-      title: "Herramientas",
-      icon: <GitBranch size={18} />,
-      skills: ["Git", "GitHub", "Bitbucket", "Vite", "Webpack", "NPM", "Yarn", "Linux"],
-    },
-    {
-      title: "Diseño",
-      icon: <Palette size={18} />,
-      skills: ["Responsive Design", "UX/UI", "Figma"],
-    },
-    {
-      title: "Metodologías",
-      icon: <Eye size={18} />,
-      skills: ["Scrum", "Ágil"],
-    },
-  ];
-
   return (
     <section id="sobre-mi" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -51,8 +62,9 @@ const About = () => {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="max-w-3xl mx-auto mb-12"
@@ -73,7 +85,7 @@ const About = () => {
         </motion.div>
 
         <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto mb-16">
-          {stats.map((stat) => (
+          {STATS.map((stat) => (
             <div key={stat.label} className="glass-panel rounded-lg p-4 text-center">
               <div className="text-2xl font-mono font-bold text-neon">
                 {stat.value}
@@ -86,29 +98,8 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={catIndex}
-              className="glow-border p-5 pt-6 pb-6 h-full"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-neon">{category.icon}</span>
-                <h4 className="font-mono text-sm text-white/80 tracking-wider uppercase">
-                  {category.title}
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span key={skill} className="terminal-tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+          {SKILL_CATEGORIES.map((category, index) => (
+            <SkillCard key={category.title} category={category} index={index} />
           ))}
         </div>
       </div>
