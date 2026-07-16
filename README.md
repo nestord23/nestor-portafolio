@@ -1,6 +1,6 @@
 # Portafolio — Néstor Montenegro
 
-[![Deploy to GitHub Pages](https://github.com/nestord23/portafolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/nestord23/portafolio/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/nestord23/nestor-portafolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/nestord23/nestor-portafolio/actions/workflows/deploy.yml)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://www.typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite)](https://vite.dev)
