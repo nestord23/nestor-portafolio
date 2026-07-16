@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, Linkedin, Github, MapPin, type LucideIcon } from "lucide-react";
-import { fadeInUp, slideInLeft, slideInRight } from "./../lib/animations";
+import { fadeInUp, slideInLeft, slideInRight } from "../../lib/animations";
 import {
   PHONE,
   EMAIL,
@@ -9,8 +9,8 @@ import {
   GITHUB_URL,
   toTelLink,
   toMailLink,
-} from "./../lib/siteConfig";
-import ContactInfoItem from "./ContactInfoItem";
+} from "../../lib/siteConfig";
+import ContactInfoItem from "../ui/ContactInfoItem";
 
 interface ContactItem {
   icon: LucideIcon;

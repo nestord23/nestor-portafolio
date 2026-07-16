@@ -105,7 +105,7 @@ const ShaderBackground = () =>{
     if(!container) return;
 
     //Respetar la preferencia de reducir las animaciones: omitir el efecto por completo.
-    if(window.matchMedia("(prefers-reduced-motconst scene = new scene();ion: reduce)").matches){
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
       return;
     }
     let width = window.innerWidth;

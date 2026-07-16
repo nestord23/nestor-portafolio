@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, type Variants } from "framer-motion";
-import SectionHeader from "./SectionHeader";
-import TimelineCanvas from "./Timelinecanvas";
+import SectionHeader from "../ui/SectionHeader";
+import TimelineCanvas from "../effects/TimelineCanvas";
 
 interface ExperienceEntry {
   title: string;

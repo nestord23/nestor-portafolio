@@ -1,14 +1,14 @@
 import { lazy, Suspense } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Header from "./components/layout/Header";
+import Hero from "./components/sections/Hero";
 
-const ShaderBackground = lazy(() => import("./components/ShaderBackground"));
-const About = lazy(() => import("./components/About"));
-const Projects = lazy(() => import("./components/Projects"));
-const Experience = lazy(() => import("./components/Experience"));
-const Contact = lazy(() => import("./components/Contact"));
-const Footer = lazy(() => import("./components/Footer"));
-const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
+const ShaderBackground = lazy(() => import("./components/effects/ShaderBackground"));
+const About = lazy(() => import("./components/sections/About"));
+const Projects = lazy(() => import("./components/sections/Projects"));
+const Experience = lazy(() => import("./components/sections/Experience"));
+const Contact = lazy(() => import("./components/sections/Contact"));
+const Footer = lazy(() => import("./components/sections/Footer"));
+const ScrollToTop = lazy(() => import("./components/layout/ScrollToTop"));
 
 const App = () => {
   return (

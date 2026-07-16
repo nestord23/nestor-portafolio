@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import NavLink from "./NavLink";
+import NavLink from "../ui/NavLink";
 
 interface Section {
   id: string;

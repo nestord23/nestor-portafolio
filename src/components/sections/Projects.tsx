@@ -1,6 +1,6 @@
-import SectionHeader from "./SectionHeader";
-import ProjectCard from "./ProjectCard";
-import { PROJECTS } from "./../data/projects";
+import SectionHeader from "../ui/SectionHeader";
+import ProjectCard from "../ui/ProjectCard";
+import { PROJECTS } from "../../data/projects";
 
 const Projects = () => {
   return (

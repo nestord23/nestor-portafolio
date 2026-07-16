@@ -1,8 +1,8 @@
 import { motion, type Variants } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { TechIcon } from "../lib/techIcons";
-import type { Project } from "../types/project";
-import GridPattern from "./GridPattern";
+import { TechIcon } from "../../lib/techIcons";
+import type { Project } from "../../types/project";
+import GridPattern from "../effects/GridPattern";
 
 interface ProjectCardProps {
   project: Project;

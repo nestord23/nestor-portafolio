@@ -1,8 +1,8 @@
 import { motion} from "framer-motion";
 import { Palette, Terminal, Layout, Code2, GitBranch, Eye } from "lucide-react";
-import SectionHeader from "./SectionHeader";
-import SkillCard, { type SkillCategory } from "./SkillCard";
-import { fadeInUp } from "../lib/animations";
+import SectionHeader from "../ui/SectionHeader";
+import SkillCard, { type SkillCategory } from "../ui/SkillCard";
+import { fadeInUp } from "../../lib/animations";
 
 interface Stat {
   label: string;

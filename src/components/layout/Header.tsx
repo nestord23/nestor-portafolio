@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
-import NavLink from "./NavLink";
+import NavLink from "../ui/NavLink";
 import MobileMenu from "./MobileMenu";
 
 interface Section {

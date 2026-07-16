@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import { fadeInUp, scaleIn } from "./../lib/animations";
-import GridBackground from "./GridBackground";
+import { fadeInUp, scaleIn } from "../../lib/animations";
+import GridBackground from "../effects/GridBackground";
 
 const TECH_STACK: string[] = ["React", "JavaScript", "TypeScript"];
 
