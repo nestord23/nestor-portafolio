@@ -41,10 +41,9 @@ export const PROJECTS: Project[] = [
     id: 5,
     title: "El Señor de la Merced",
     description:
-      "Aplicación web desarrollada con React. Interfaz intuitiva y diseño responsivo.",
-    tech: ["React", "HTML5", "CSS3"],
-    githubUrl: "https://github.com/nestord23/el-senor-de-la-merced",
-    demoUrl: "https://elsenordelamerced.vercel.app/",
+      "Aplicación web desarrollada con Astro. Landing Page dedicada a Jesus Nazareno de la Merced de la cuidad de Guatemala.",
+    tech: ["Astro", "HTML5", "CSS3"],
+    githubUrl: "https://github.com/nestord23/JesusDeLaMerced",
     featured: false,
   },
   {

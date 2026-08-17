@@ -13,6 +13,7 @@ import {
   SiFirebase,
   SiTypescript,
   SiVite,
+  SiAstro,
 } from "react-icons/si";
 
 interface TechIconConfig {
@@ -38,7 +39,7 @@ const TECH_ICON_MAP: Record<string, TechIconConfig> = {
   CRUD: { Icon: FaJs, color: "#F7DF1E" },
   WordPress: { Icon: FaHtml5, color: "#21759B" },
   Vite: { Icon: SiVite, color: "#646CFF" },
-  Astro: { Icon: FaJs, color: "#FF5D01" },
+  Astro: { Icon: SiAstro, color: "#FF5D01" },
   WebSockets: { Icon: FaNodeJs, color: "#339933" },
 };
 
