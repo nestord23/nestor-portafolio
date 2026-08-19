@@ -55,10 +55,20 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          ui: ["framer-motion", "lucide-react", "react-icons"],
-          three: ["three"],
+        manualChunks(id) {
+          if (id.includes("node_modules/react") || id.includes("node_modules/react-dom")) {
+            return "vendor";
+          }
+          if (
+            id.includes("node_modules/framer-motion") ||
+            id.includes("node_modules/lucide-react") ||
+            id.includes("node_modules/react-icons")
+          ) {
+            return "ui";
+          }
+          if (id.includes("node_modules/three")) {
+            return "three";
+          }
         },
       },
     },
