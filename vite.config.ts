@@ -14,7 +14,6 @@ export default defineConfig({
       includeManifestIcons: false,
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,jpg,jpeg,webp,gif,ico}"],
-        globIgnores: ["IconoPagina.*"],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
       },
       manifest: {
