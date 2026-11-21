@@ -18,6 +18,11 @@
     box-sizing: border-box;
   }
 
+  /* Compensa el header fijo al navegar por anclas (#seccion). */
+  html {
+    scroll-padding-top: 72px;
+  }
+
   body {
     background-color: var(--color-obsidian);
     color: var(--color-slate);
